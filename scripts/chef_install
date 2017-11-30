@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+UBUNTU="16.04"
+VERSION="2.3.4"
+RELEASE="stable"
+PACKAGE="chefdk_${VERSION}-1_amd64.deb"
+
+URL="https://packages.chef.io/files/${RELEASE}/chefdk/${VERSION}/ubuntu/${UBUNTU}/${PACKAGE}"
+
+echo ">>> Instaling 'Chef Development Kit 2.3.4'"
+
+apt-get update &&\
+apt-get --yes install ruby &&\ 
+curl --output ${PACKAGE} ${URL} &&\
+dpkg --install ${PACKAGE}
+

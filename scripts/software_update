@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+echo ">>> Updating system..."
+
+apt-get update &&\
+apt-get --yes dist-upgrade &&\
+apt-get --yes --purge autoremove
+
