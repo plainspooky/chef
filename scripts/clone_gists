@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+declare -a GISTS=(
+    '643d857136271d7cefb0' 
+    'f074413333135d2ca96e'
+)
+
+OLDPWD=$( pwd )
+
+echo ">>> Cloning GitHub's Gists"
+
+mkdir ~/gists
+cd ~/gists
+
+for gist in ${GISTS[@]}; do
+    git clone "https://gist.github.com/${gist}.git"
+done
+
+cd ${OLDPWD}
+
