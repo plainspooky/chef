@@ -13,6 +13,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 	config.vm.provision "shell", path:"./scripts/software_update"
 	config.vm.provision "shell", path:"./scripts/chef_install"
-	config.vm.provision "shell", inline:"ln -s /vagrant/chef-repo/ ~", privileged:false
+	config.vm.provision "shell", inline:"cp -ar /vagrant/chef-repo/ ~", privileged:false
 
 end
